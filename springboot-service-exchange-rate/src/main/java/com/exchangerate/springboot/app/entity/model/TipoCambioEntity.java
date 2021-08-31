@@ -1,16 +1,20 @@
 package com.exchangerate.springboot.app.entity.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
+@Entity
+@Builder
 @Getter
 @Setter
-@Entity()
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Table(name = "maestra_tipo_cambio")
-public class TipoCambioEntity {
+public class TipoCambioEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,4 +25,8 @@ public class TipoCambioEntity {
     @Column(name = "fecha_cambio")
     @Temporal(TemporalType.DATE)
     private Date fecha_cambio;
+
+    public static TipoCambioEntityBuilder builder() {
+        return new TipoCambioEntityBuilder();
+    }
 }
