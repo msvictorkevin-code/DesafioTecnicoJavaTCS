@@ -1,5 +1,4 @@
-FROM adoptopenjdk/openjdk11:alpine-jre
-EXPOSE 8080
+FROM openjdk:11-jdk
 ARG JAR_FILE=target/springboot-service-exchange-rate-0.0.1-SNAPSHOT.jar
 WORKDIR /opt/app
 COPY ${JAR_FILE} app.jar
