@@ -1,6 +1,6 @@
 package com.exchangerate.springboot.app.service;
 
-import com.exchangerate.springboot.app.dao.TipoCambioDAO;
+import com.exchangerate.springboot.app.dao.ITipoCambioDAO;
 import com.exchangerate.springboot.app.entity.RequestTipoCambio;
 import com.exchangerate.springboot.app.entity.ResponseTipoCambio;
 import com.exchangerate.springboot.app.entity.model.TipoCambioEntity;
@@ -19,7 +19,7 @@ public class TipoCambioServiceImpl implements TipoCambioService {
     private final Logger logger = LoggerFactory.getLogger(TipoCambioServiceImpl.class);
 
     @Autowired
-    private TipoCambioDAO dao;
+    private ITipoCambioDAO dao;
 
     @Override
     public ResponseTipoCambio procesarCambio(RequestTipoCambio requestTipoCambio) {
